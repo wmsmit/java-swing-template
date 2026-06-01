@@ -1,0 +1,34 @@
+{
+  "name": "Java Swing Classroom",
+  "image": "://microsoft.com",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "installMaven": "true",
+      "installGradle": "false"
+    },
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "version": "latest",
+      "password": "vnc"
+    }
+  },
+  "remoteEnv": {
+    "DISPLAY": ":1"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "ms-vsliveshare.vsliveshare"
+      ]
+    }
+  },
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "Java GUI Screen",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "remoteUser": "vscode"
+}
